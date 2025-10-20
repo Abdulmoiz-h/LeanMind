@@ -1,0 +1,14 @@
+name = "leanmind"
+main = "backend/index.js"
+compatibility_date = "2025-10-08"
+
+[ai]
+binding = "AI"
+
+[[durable_objects.bindings]]
+name = "chat-session"
+class_name = "ChatDurableObject"
+
+[[migrations]]
+tag = "v1"
+new_classes = [ "ChatDurableObject" ]
