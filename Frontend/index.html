@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,18 +5,78 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>LeanMind AI Coach</title>
     <link rel="stylesheet" href="style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Atlas+Grotesk:wght@400;500;600&display=swap" rel="stylesheet">
 </head>
 <body>
+    <!-- Main Content -->
     <div id="chat-container">
-        <h1>LeanMind AI Coach</h1>
-        <div id="chat-window">
+        <div class="chat-header">
+            <div class="header-actions">
+                <button id="clear-chat" class="icon-btn" title="Clear Chat">
+                    <i class="fas fa-trash"></i>
+                </button>
+                <button id="new-session" class="icon-btn" title="New Session">
+                    <i class="fas fa-plus"></i>
+                </button>
             </div>
-        <div id="input-area">
-            <input type="text" id="chat-input" placeholder="Ask about fitness, focus, or habits...">
-            <button id="send-button">Send</button>
+            <div class="title-container">
+                <h1 class="main-title">LeanMind</h1>
+                <p class="subtitle">Train your habits. Track your mind.</p>
+            </div>
+            <button id="menu-toggle" class="icon-btn menu-toggle-btn" title="Menu">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+        
+        <div id="chat-window"></div>
+        
+        <div id="input-container">
+            <div class="input-wrapper">
+                <input type="text" id="chat-input" placeholder="Message LeanMind...">
+                <button id="send-button" class="send-btn">
+                    <i class="fas fa-paper-plane"></i>
+                </button>
+            </div>
+            <div class="input-footer">
+                <small>LeanMind can make mistakes. Consider checking important information.</small>
+            </div>
         </div>
     </div>
 
-    <script src="script.js"></script> 
+    <!-- Sidebar Menu -->
+    <div id="sidebar" class="sidebar">
+        <div class="sidebar-header">
+            <h3>LeanMind Menu</h3>
+            <button id="close-menu" class="icon-btn close-btn" title="Close Menu">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <ul class="menu-items">
+            <li><a href="#" class="menu-item" data-section="about"><i class="fas fa-info-circle"></i> About</a></li>
+            <li><a href="#" class="menu-item" data-section="ai"><i class="fas fa-robot"></i> AI Features</a></li>
+            <li><a href="#" class="menu-item" data-section="fitness"><i class="fas fa-dumbbell"></i> Fitness</a></li>
+            <li><a href="#" class="menu-item" data-section="focus"><i class="fas fa-brain"></i> Focus</a></li>
+            <li><a href="#" class="menu-item" data-section="habits"><i class="fas fa-chart-line"></i> Habits</a></li>
+        </ul>
+        <div class="sidebar-footer">
+            <div class="session-info">
+                <small>Session: <span id="session-display"></span></small>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal for menu sections -->
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <div id="modal-body"></div>
+        </div>
+    </div>
+
+    <!-- Overlay -->
+    <div class="overlay"></div>
+
+    <script src="script.js"></script>
 </body>
 </html>
